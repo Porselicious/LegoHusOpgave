@@ -5,15 +5,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 /**
- The purpose of Connector is to...
+ The purpose of Connector is to connect to database.
 
- @author kasper
+ @author rporse
  */
 public class Connector {
 
-    private static final String URL = "jdbc:mysql://46.101.253.149:3306/useradmin";
-    private static final String USERNAME = "doorkeeper";
-    private static final String PASSWORD = "bank3*andyouarein";
+    private static final String URL = "jdbc:mysql://46.101.159.206:3306/Legohus";
+    private static final String USERNAME = "rporse";
+    private static final String PASSWORD = "August2017";
 
     private static Connection singleton;
 
@@ -27,6 +27,10 @@ public class Connector {
             singleton = DriverManager.getConnection( URL, USERNAME, PASSWORD );
         }
         return singleton;
+    }
+
+    Connection getConnection() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
