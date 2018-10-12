@@ -58,10 +58,10 @@ public class DAO {
             ResultSet rs = pStatement.executeQuery();
 
             if (rs.next()) {
-                String name = rs.getString("username");
+                String email = rs.getString("email");
                 String password = rs.getString("password");
                 String role = rs.getString("role");
-                user = new User(username, password, role);
+                user = new User(email, password, role);
             } else {
                 throw new Exception("That user doesn't exist");
             }
@@ -87,7 +87,7 @@ public class DAO {
                 String orderDate = rs.getString("orderDate");
                 String user_email = rs.getString("user_email");
                 try {
-                    orders.add(new Order(orderID, status, heigth, length, , width, orderDate, getUser(user)));
+                    orders.add(new Order(orderID, status, heigth, length, width, orderDate, getUser(user_email)));
                 } catch (Exception ex) {
                     Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -113,11 +113,9 @@ public class DAO {
                 int width = rs.getInt("width");
                 String orderDate = rs.getString("orderDate");
                 String user_email = rs.getString("user_email");
-                try {
-                    orders.add(new Order(orderID, status, heigth, length, , width, orderDate, getUser(username)));
-                } catch (Exception ex) {
-                    Logger.getLogger(DAO.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                orders.add(new Order(orderID, status, heigth, length, width, orderDate, user));
+                   // orders.add(new Order(orderID, status, heigth, length, , width, orderDate, user));
+                
             }
         } catch (SQLException e) {
             e.printStackTrace();
