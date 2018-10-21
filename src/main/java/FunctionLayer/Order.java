@@ -11,22 +11,24 @@ package FunctionLayer;
  */
 public class Order {
     private int orderID;
-    private String status;
+    private boolean status;
     private int height;
     private int length;
     private int width;
     private String orderDate;
-    private User user;
+    private User user_email;
 
-    public Order(int orderID, String status, int height, int length, int width, String orderDate, User user) {
+    public Order(int orderID, boolean status, int height, int length, int width, String orderDate, User user_email) {
         this.orderID = orderID;
         this.status = status;
         this.height = height;
         this.length = length;
         this.width = width;
         this.orderDate = orderDate;
-        this.user = user;
+        this.user_email = user_email;
     }
+
+    
 
     public int getOrderID() {
         return orderID;
@@ -36,11 +38,11 @@ public class Order {
         this.orderID = orderID;
     }
 
-    public String getStatus() {
+    public boolean getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 
@@ -77,11 +79,11 @@ public class Order {
     }
 
     public User getUser() {
-        return user;
+        return user_email;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(User user_email) {
+        this.user_email = user_email;
     }
     
 }

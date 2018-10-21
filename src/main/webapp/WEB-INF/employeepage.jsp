@@ -10,11 +10,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Employee home page</title>
+        <title>Employee homepage</title>
     </head>
     <body>
         
         <h1>Hello <%=((User)session.getAttribute("user")).getEmail()%> </h1>
-        You are now logged in as a EMPLOYEE of our wonderful site.
+        You are now logged in as an EMPLOYEE.
     </body>
 </html>
